@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PROFIL GRACZA"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"/>
+
+        <EditText
+            android:id="@+id/et_nick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Wpisz nick gracza"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"/>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Szukaj"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/result_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:padding="20dp"
+            android:background="#F5F5F5"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/result_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

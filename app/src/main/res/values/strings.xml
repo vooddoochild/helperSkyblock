@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Skyblock Helper</string>
+    <string name="open">Otwórz menu</string>
+    <string name="close">Zamknij menu</string>
+</resources>
