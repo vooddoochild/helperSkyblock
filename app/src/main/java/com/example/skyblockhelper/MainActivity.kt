@@ -6,9 +6,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
-import com.example.skyblockhelper.BazaarFragment
-import com.example.skyblockhelper.ElectionsFragment
-import com.example.skyblockhelper.ProfileFragment
 import com.example.skyblockhelper.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -32,7 +29,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding.navView.setNavigationItemSelectedListener(this)
 
-        // Obsługa przycisku wstecz (nowa metoda)
         onBackPressedDispatcher.addCallback(this, object : androidx.activity.OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -43,7 +39,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         })
 
-        // Startuj z profilem
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ProfileFragment())
@@ -53,23 +48,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_profile -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, ProfileFragment())
-                    .commit()
-            }
-            R.id.nav_elections -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, ElectionsFragment())
-                    .commit()
-            }
-            R.id.nav_bazaar -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, BazaarFragment())
-                    .commit()
-            }
+        val fragment = when (item.itemId) {
+            R.id.nav_profile -> ProfileFragment()
+            R.id.nav_elections -> ElectionsFragment()
+            R.id.nav_bazaar -> BazaarFragment()
+            R.id.nav_settings -> SettingsFragment()
+            else -> ProfileFragment()
         }
+        
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }

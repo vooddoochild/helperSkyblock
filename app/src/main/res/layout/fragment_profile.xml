@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_gray"
     android:fillViewport="true">
 
     <LinearLayout
@@ -13,28 +15,40 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PROFIL GRACZA"
-            android:textSize="24sp"
+            android:text="@string/profile_title"
+            android:textColor="@color/hypixel_primary"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:padding="16dp"/>
+            android:layout_marginBottom="24dp"/>
 
-        <EditText
-            android:id="@+id/et_nick"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Wpisz nick gracza"
-            android:inputType="text"
-            android:padding="12dp"
-            android:background="@android:drawable/edit_text"/>
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/profile_hint"
+            app:startIconDrawable="@android:drawable/ic_menu_edit"
+            app:boxStrokeColor="@color/hypixel_primary"
+            app:hintTextColor="@color/hypixel_primary">
 
-        <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_search"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Szukaj"
+            android:layout_height="60dp"
+            android:text="@string/profile_search"
             android:textSize="16sp"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="16dp"
+            app:cornerRadius="12dp"
+            app:icon="@android:drawable/ic_menu_search"
+            android:backgroundTint="@color/hypixel_primary"/>
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -42,25 +56,82 @@
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:indeterminateTint="@color/hypixel_primary"/>
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/result_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="16dp"
-            android:padding="20dp"
-            android:background="#F5F5F5"
-            android:visibility="gone">
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/card_stroke">
 
-            <TextView
-                android:id="@+id/result_text"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:lineSpacingExtra="4dp"
-                android:fontFamily="monospace"/>
-        </LinearLayout>
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_display_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/card_stroke"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ranga: "
+                        android:textStyle="bold"
+                        android:textColor="@color/hypixel_primary"/>
+                    <TextView
+                        android:id="@+id/tv_rank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UUID: "
+                        android:textStyle="bold"
+                        android:textColor="@color/hypixel_primary"/>
+                    <TextView
+                        android:id="@+id/tv_uuid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 </ScrollView>

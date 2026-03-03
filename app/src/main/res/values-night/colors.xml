@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Overrides -->
+    <color name="white">#1E1E1E</color>
+    <color name="black">#FFFFFF</color>
+    <color name="background_gray">#121212</color>
+    <color name="card_stroke">#333333</color>
+</resources>

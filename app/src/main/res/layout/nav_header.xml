@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
-    android:background="#2196F3"
+    android:layout_height="140dp"
+    android:background="@color/hypixel_primary"
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="24dp">
@@ -11,24 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Skyblock Helper"
-        android:textColor="@android:color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"/>
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Projekt Technikum"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"/>
+        android:text="Statystyki Hypixel"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:alpha="0.8" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="v2.0 • 2024"
-        android:textColor="@android:color/white"
-        android:alpha="0.8"
-        android:textSize="12sp"
-        android:layout_marginTop="4dp"/>
 </LinearLayout>

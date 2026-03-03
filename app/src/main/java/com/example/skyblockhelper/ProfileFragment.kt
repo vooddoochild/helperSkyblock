@@ -72,7 +72,6 @@ class ProfileFragment : Fragment() {
     private fun displayPlayer(player: Player) {
         binding.resultCard.visibility = View.VISIBLE
 
-        // Formatowanie rangi
         val rank = when {
             player.rank != null && player.rank != "NORMAL" -> player.rank
             player.newPackageRank != null -> player.newPackageRank
@@ -84,19 +83,9 @@ class ProfileFragment : Fragment() {
             .split(" ")
             .joinToString(" ") { it.lowercase().replaceFirstChar { c -> c.uppercase() } }
 
-        val text = """
-            PROFIL GRACZA
-            
-            Nick: ${player.displayname}
-            
-            Ranga: $formattedRank
-            
-            UUID: ${player.uuid}
-            
-            Status: Gracz znaleziony w bazie Hypixel
-        """.trimIndent()
-
-        binding.resultText.text = text
+        binding.tvDisplayName.text = player.displayname
+        binding.tvRank.text = formattedRank
+        binding.tvUuid.text = player.uuid
     }
 
     override fun onDestroyView() {

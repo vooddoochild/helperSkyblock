@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_profile"
-        android:icon="@android:drawable/ic_menu_myplaces"
-        android:title="🎮 Profil gracza"/>
+        android:title="Profil gracza"/>
     <item
         android:id="@+id/nav_elections"
-        android:icon="@android:drawable/ic_menu_sort_by_size"
-        android:title="🗳️ Wybory i Major"/>
+        android:title="Wybory i Major"/>
     <item
         android:id="@+id/nav_bazaar"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="🏪 Bazaar"/>
+        android:title="Bazaar"/>
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Ustawienia"/>
 </menu>

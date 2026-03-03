@@ -22,7 +22,7 @@ interface HypixelApi {
     suspend fun getBazaar(@Query("key") apiKey: String): BazaarResponse
 
     companion object {
-        const val API_KEY = "76f56a18-bf92-4559-a963-0af9d744322a"
+        const val API_KEY = "f022251d-36a4-461f-a5f9-9bb193704d20"
 
         fun create(): HypixelApi {
             return Retrofit.Builder()

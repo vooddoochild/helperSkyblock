@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hypixel_blue_light">#4facfe</color>
+    <color name="hypixel_blue_dark">#00f2fe</color>
+    <color name="hypixel_primary">#1a73e8</color>
+    <color name="hypixel_primary_variant">#0d47a1</color>
+    <color name="hypixel_accent">#ffab00</color>
+    <color name="background_gray">#F0F4F8</color>
+    <color name="card_stroke">#D1D9E0</color>
+    <color name="skyblock_blue">#3498db</color>
+    <color name="skyblock_green">#2ecc71</color>
 </resources>
