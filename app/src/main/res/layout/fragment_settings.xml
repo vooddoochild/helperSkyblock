@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Autor: Początkujący Deweloper"
+                android:text="Autor: stefan"
                 android:textSize="14sp"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
